@@ -141,9 +141,9 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\Downloads\banking\PR5_Banking\PR4_Banking\Account.h" />
     <ClInclude Include="..\..\..\..\..\Downloads\banking\PR5_Banking\PR4_Banking\Bank.h" />
-    <ClInclude Include="..\..\..\..\..\Downloads\banking\PR5_Banking\PR4_Banking\Customer.h" />
     <ClInclude Include="..\..\..\..\..\Downloads\banking\PR5_Banking\PR4_Banking\readint.h" />
     <ClInclude Include="..\..\..\..\..\Downloads\banking\PR5_Banking\PR4_Banking\Transaction.h" />
+    <ClInclude Include="Customer.h" />
     <ClInclude Include="Customer_Adult.h" />
     <ClInclude Include="Customer_Senior.h" />
     <ClInclude Include="Customer_Student.h" />

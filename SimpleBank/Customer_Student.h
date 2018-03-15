@@ -4,7 +4,7 @@
 #include "Customer.h"
 
 class Customer_Student : public Customer {
-
+	
 };
 
 #endif 
