@@ -139,18 +139,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Downloads\banking\PR5_Banking\PR4_Banking\Account.h" />
-    <ClInclude Include="..\..\..\..\..\Downloads\banking\PR5_Banking\PR4_Banking\Bank.h" />
-    <ClInclude Include="..\..\..\..\..\Downloads\banking\PR5_Banking\PR4_Banking\readint.h" />
-    <ClInclude Include="..\..\..\..\..\Downloads\banking\PR5_Banking\PR4_Banking\Transaction.h" />
+    <ClInclude Include="Account.h" />
+    <ClInclude Include="Bank.h" />
     <ClInclude Include="Customer.h" />
     <ClInclude Include="Customer_Adult.h" />
     <ClInclude Include="Customer_Senior.h" />
     <ClInclude Include="Customer_Student.h" />
+    <ClInclude Include="readint.h" />
+    <ClInclude Include="Transaction.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Downloads\banking\PR5_Banking\PR4_Banking\Banking_Application.cpp" />
-    <ClCompile Include="..\..\..\..\..\Downloads\banking\PR5_Banking\PR4_Banking\readint.cpp" />
+    <ClCompile Include="Banking_Application.cpp" />
+    <ClCompile Include="readint.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

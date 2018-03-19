@@ -15,18 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Downloads\banking\PR5_Banking\PR4_Banking\Account.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\Downloads\banking\PR5_Banking\PR4_Banking\Bank.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\Downloads\banking\PR5_Banking\PR4_Banking\readint.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\Downloads\banking\PR5_Banking\PR4_Banking\Transaction.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Customer_Adult.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -39,12 +27,24 @@
     <ClInclude Include="Customer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="readint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Transaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bank.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Account.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Downloads\banking\PR5_Banking\PR4_Banking\Banking_Application.cpp">
+    <ClCompile Include="Banking_Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Downloads\banking\PR5_Banking\PR4_Banking\readint.cpp">
+    <ClCompile Include="readint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
