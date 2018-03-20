@@ -16,7 +16,7 @@ private:
 	std::vector<Account *> accounts; // Bank HAS accounts
 	std::vector<Customer *> customers;  // Bank HAS customers
 
-										// Counters for generating unique account and customer IDs
+	// Counters for generating unique account and customer IDs
 	int account_id;
 	int customer_id;
 
@@ -32,6 +32,13 @@ private:
 		std::vector<int> user_accounts;
 
 		// FIXME: Find all the accounts belonging to a customer name and add it to the vector of account numbers.
+		// Fixed on Tuesday. Need to test still      ***
+		for (int i = 0; i < accounts.size(); i++) {
+			if (accounts.at(i)->get_customer()->get_name() == name) {
+				user_accounts.push_back(accounts.at(i)->get_account());
+			}
+		}
+		// Code added Tuesday. Needs testing	     ***
 
 		return user_accounts;
 	}

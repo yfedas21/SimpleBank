@@ -7,11 +7,11 @@
 #include "Transaction.h"
 
 /**
-The Bank has Accounts and an Account belongs to a Customer.
-Additionally, there are specialized types of accounts: Checking_Account and Savings_Account.
-Checking_Account and Savings_Account have specialized ways of adding interest, and describing itself.
+	The Bank has Accounts and an Account belongs to a Customer.
+	Additionally, there are specialized types of accounts: Checking_Account and Savings_Account.
+	Checking_Account and Savings_Account have specialized ways of adding interest, and describing itself.
 
-@author: Ed Walker
+	@author: Ed Walker
 */
 
 class Account {
@@ -21,11 +21,11 @@ protected:
 	int account_number;		// A unique number identifying this account
 	std::vector<Transaction *> transactions;  // The record of transactions that have occured with this account
 
-											  /**
-											  Describe fees associated with the customer who owns this account.
-											  The fee will depend on the specific type of customer.
-											  @return string showing checking and overdraft fees
-											  */
+	/**
+		Describe fees associated with the customer who owns this account.
+		The fee will depend on the specific type of customer.
+		@return string showing checking and overdraft fees
+	*/
 	std::string get_fees()
 	{
 		int overdraft, charge;
