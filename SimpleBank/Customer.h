@@ -53,6 +53,8 @@ public:
 	string get_telephone_number() { return telephone_number; }
 	int get_customer_number() { return customer_number; }
 
+	// Each type of Customer has its own checking and savings interest rates,
+	// as well as its own checking and overdraft fees.
 
 };
 

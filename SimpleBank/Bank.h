@@ -51,13 +51,13 @@ private:
 	Customer *find_customer(std::string name)
 	{
 		// FIXME: Find and return the Customer object with the parameter name
-		// Fixed on Tuesday
+		// ******* Added on Tuesday
 		for (int i = 0; i < customers.size(); i++) {
 			if (customers.at(i)->get_name() == name) {
 				return customers.at(i);
 			}
 		}
-		// Fixed on Tuesday
+		// ******* Added on Tuesday <end>
 
 		return NULL;
 	}
