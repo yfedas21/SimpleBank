@@ -1,17 +1,19 @@
 #ifndef CUSTOMER_H_
 #define CUSTOMER_H_
 #include <string>
+#include <algorithm>
 
 using std::string;
+
 /**
-The Bank has Customers.  Each Customer has a name, address, age, and telephone number.
-Additionally, there are specialized types of Customers: Adult, Senior, and Student.
-Each type of Customer has its own checking and savings interest rates,
-as well as its own checking and overdraft fees.
+	The Bank has Customers.  Each Customer has a name, address, age, and telephone number.
+	Additionally, there are specialized types of Customers: Adult, Senior, and Student.
+	Each type of Customer has its own checking and savings interest rates,
+	as well as its own checking and overdraft fees.
 
 @author: Ed Walker
 */
-class Customer // FIXME: Complete the implementation!
+class Customer 
 {
 private:
 	string name;
@@ -20,9 +22,25 @@ private:
 	string telephone_number;
 	int customer_number;
 
+	
+
 public:
 	Customer() {
 
+	}
+
+	// Factory class
+	static Customer* factory(string customer_type) {
+		// ******* Added Tuesday, March 20, 2018
+		/*		if (customer_type == "SENIOR")
+					return new Customer::Senior*;
+				else if (customer_type == "student")
+					return new Student*;
+				else if (customer_type == "adult")
+					return new Adult*;
+				else throw std::invalid_argument(
+					customer_type + " is invalid!");*/
+		// ******* <end>
 	}
 
 	// Mutator functions
@@ -55,7 +73,6 @@ public:
 
 	// Each type of Customer has its own checking and savings interest rates,
 	// as well as its own checking and overdraft fees.
-
 };
 
 
