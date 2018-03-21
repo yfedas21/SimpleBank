@@ -4,6 +4,7 @@
 #include <stdexcept>
 #include "Account.h"
 #include "Customer.h"
+#include "Customer_Factory.h"
 
 /**
 The CS273 Bank has Accounts and Customers
@@ -31,14 +32,13 @@ private:
 	{
 		std::vector<int> user_accounts;
 
-		// FIXME: Find all the accounts belonging to a customer name and add it to the vector of account numbers.
-		// Fixed on Tuesday. Need to test still      ***
-		for (int i = 0; i < accounts.size(); i++) {
-			if (accounts.at(i)->get_customer()->get_name() == name) {
-				user_accounts.push_back(accounts.at(i)->get_account());
+		// ******* Test this function 
+		for (auto acct : accounts) {
+			if (acct->get_customer()->get_name() == name) {
+				user_accounts.push_back(acct->get_account());
 			}
 		}
-		// Code added Tuesday. Needs testing	     ***
+		// ******* <end>
 
 		return user_accounts;
 	}
@@ -50,11 +50,10 @@ private:
 	*/
 	Customer *find_customer(std::string name)
 	{
-		// FIXME: Find and return the Customer object with the parameter name
 		// ******* Added on Tuesday
-		for (int i = 0; i < customers.size(); i++) {
-			if (customers.at(i)->get_name() == name) {
-				return customers.at(i);
+		for (auto cust : customers) {
+			if (cust->get_name() == name) {
+				return cust;
 			}
 		}
 		// ******* Added on Tuesday <end>
@@ -73,6 +72,7 @@ private:
 		Account *acct = NULL;
 
 		// FIXME: Factory method for creating a Account object (could be a Saving_Account or a Checking_Account).
+
 
 		return acct;
 	}
@@ -109,9 +109,7 @@ public:
 	Account* add_account(std::string name, std::string address, std::string telephone, int age,
 		std::string cust_type, std::string account_type)
 	{
-		Customer *cust;
-
-		// FIXME: Depending on the customer type, we want to create an Adult, Senior, or Student object.
+		Customer *cust = Customer_Factory::factory(cust_type, name, address, age, telephone);
 
 		customers.push_back(cust);
 		return add_account(cust, account_type);

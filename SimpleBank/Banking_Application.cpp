@@ -138,7 +138,7 @@ int main()
 {
 	Bank bank; // We create the bank
 
-			   // Display menu for banking activites
+	// Display menu for banking activites
 	cout << "Welcome to the SimpleBanking portal!\n";
 	cout << "Thank you for your hard work!\n";
 	char choice;
