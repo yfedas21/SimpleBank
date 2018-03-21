@@ -140,6 +140,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
+    <ClInclude Include="Account_Checking.h" />
+    <ClInclude Include="Account_Factory.h" />
+    <ClInclude Include="Account_Savings.h" />
     <ClInclude Include="Bank.h" />
     <ClInclude Include="Customer.h" />
     <ClInclude Include="Customer_Adult.h" />

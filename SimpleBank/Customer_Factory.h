@@ -6,8 +6,6 @@
 #include "Customer_Senior.h"
 #include "Customer_Student.h"
 
-using std::string;
-
 class Customer_Factory {
 public:
 	static Customer *factory(string customer_type, string name, string address, int age, string telephone_number) {

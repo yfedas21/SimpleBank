@@ -6,6 +6,8 @@
 #include "Customer.h"
 #include "Transaction.h"
 
+using std::string;
+
 /**
 	The Bank has Accounts and an Account belongs to a Customer.
 	Additionally, there are specialized types of accounts: Checking_Account and Savings_Account.

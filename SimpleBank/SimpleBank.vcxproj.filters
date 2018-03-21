@@ -42,6 +42,15 @@
     <ClInclude Include="Customer_Factory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Account_Checking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Account_Savings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Account_Factory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Banking_Application.cpp">
