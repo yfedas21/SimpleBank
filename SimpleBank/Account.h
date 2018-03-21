@@ -22,7 +22,7 @@ private:
 protected:
 	Customer *customer;		// The customer who owns this account
 	double balance;			// The available balance in this account
-	int *account_number = &account_counter;		// A unique number identifying this account
+	int account_number;		// A unique number identifying this account
 	std::vector<Transaction *> transactions;  // The record of transactions that have occured with this account
 
 	/**
