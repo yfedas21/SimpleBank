@@ -34,13 +34,11 @@ private:
 	{
 		std::vector<int> user_accounts;
 
-		// ******* Test this function 
 		for (auto acct : accounts) {
 			if (acct->get_customer()->get_name() == name) {
 				user_accounts.push_back(acct->get_account());
 			}
 		}
-		// ******* <end>
 
 		return user_accounts;
 	}
@@ -52,13 +50,11 @@ private:
 	*/
 	Customer *find_customer(std::string name)
 	{
-		// ******* Added on Tuesday
 		for (auto cust : customers) {
 			if (cust->get_name() == name) {
 				return cust;
 			}
 		}
-		// ******* Added on Tuesday <end>
 
 		return NULL;
 	}
@@ -72,9 +68,7 @@ private:
 	Account * add_account(Customer *cust, std::string account_type)
 	{
 		Account *acct = Account_Factory::factory(cust, account_type, acct_id);
-
-		// FIXME: Factory method for creating a Account object (could be a Saving_Account or a Checking_Account).
-
+		increment(acct_id);
 
 		return acct;
 	}
@@ -98,7 +92,7 @@ public:
 		return add_account(cust, account_type);
 
 		// Increment acct_id an arbitrary amount
-		acct_id += 7;
+		increment(acct_id);
 	}
 
 	/**
@@ -117,13 +111,13 @@ public:
 		Customer *cust = Customer_Factory::factory(cust_type, name, address, age, telephone);
 
 		// Increment cust_id an arbitrary amount
-		cust_id += 7;
+		increment(cust_id);
 
 		customers.push_back(cust);
 		return add_account(cust, account_type);
 
 		// Increment acct_id an arbitrary amount
-		acct_id += 7;
+		increment(acct_id);
 	}
 
 	/**
@@ -178,6 +172,13 @@ public:
 				return accounts[i];
 		}
 		return NULL;
+	}
+
+	/**
+		Increment the acct_id or cust_id by an arbitrary amount
+	*/
+	void increment(int &id_counter) {
+		id_counter += 7;
 	}
 };
 
