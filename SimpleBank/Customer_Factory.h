@@ -8,13 +8,14 @@
 
 class Customer_Factory {
 public:
-	static Customer *factory(string customer_type, string name, string address, int age, string telephone_number) {
+	static Customer *factory(string customer_type, string name, string address, 
+		int age, string telephone_number, int id) {
 		if (customer_type == "senior")
-			return new Customer_Senior(name, address, age, telephone_number);
+			return new Customer_Senior(name, address, age, telephone_number, id);
 		else if (customer_type == "student")
-			return new Customer_Student(name, address, age, telephone_number);
+			return new Customer_Student(name, address, age, telephone_number, id);
 		else if (customer_type == "adult")
-			return new Customer_Adult(name, address, age, telephone_number);
+			return new Customer_Adult(name, address, age, telephone_number, id);
 		else throw std::invalid_argument(
 			customer_type + " is invalid!");
 		

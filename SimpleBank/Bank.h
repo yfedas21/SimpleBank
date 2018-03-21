@@ -74,7 +74,8 @@ private:
 	}
 
 public:
-	/** Constructor
+	/** 
+		Constructor
 	*/
 	Bank() : acct_id(1000), cust_id(1000) {}
 
@@ -89,10 +90,10 @@ public:
 		Customer *cust = find_customer(name);
 		if (cust == NULL)
 			return NULL;
-		return add_account(cust, account_type);
 
-		// Increment acct_id an arbitrary amount
 		increment(acct_id);
+
+		return add_account(cust, account_type);
 	}
 
 	/**
@@ -106,18 +107,16 @@ public:
 	@return the newly created account object
 	*/
 	Account* add_account(std::string name, std::string address, std::string telephone, int age,
-		std::string cust_type, std::string account_type)
+		std::string cust_type, std::string account_type, int id)
 	{
-		Customer *cust = Customer_Factory::factory(cust_type, name, address, age, telephone);
+		Customer *cust = Customer_Factory::factory(cust_type, name, address, age, telephone, id);
 
-		// Increment cust_id an arbitrary amount
 		increment(cust_id);
+		increment(acct_id);
 
 		customers.push_back(cust);
-		return add_account(cust, account_type);
 
-		// Increment acct_id an arbitrary amount
-		increment(acct_id);
+		return add_account(cust, account_type);
 	}
 
 	/**
@@ -179,6 +178,14 @@ public:
 	*/
 	void increment(int &id_counter) {
 		id_counter += 7;
+	}
+
+	/**
+		Used in Banking_Application.cpp
+		@return The current cust_id
+	*/
+	int get_cust_id() {
+		return cust_id;
 	}
 };
 

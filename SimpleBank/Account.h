@@ -59,12 +59,9 @@ protected:
 
 public:
 	/**
-	Constructor requires a customer to create an account
-	Balance always starts with 0 when account is created.
+		Constructor requires a customer to create an account
+		Balance always starts with 0 when account is created.
 	*/
-
-	// &&&& I want to create an auto-generating id &&&&
-	// Account(Customer *cust, int id) : customer(cust), account_number(id), balance(0) {}
 	Account(Customer *cust, int id) : customer(cust), account_number(id), balance(0) {}
 
 	/**

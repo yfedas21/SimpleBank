@@ -25,11 +25,12 @@ protected:
 
 public:
 
-	Customer(string name, string address, int age, string telephone_number) {
+	Customer(string name, string address, int age, string telephone_number, int id) {
 		this->name = name;
 		this->address = address;
 		this->age = age;
 		this->telephone_number = telephone_number;
+		this->customer_number = id;
 	}
 
 	// Create a pure virtual function to 

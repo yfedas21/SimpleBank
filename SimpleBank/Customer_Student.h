@@ -5,8 +5,10 @@
 
 class Customer_Student : public Customer {
 private:
-	Customer_Student(string name, string address, int age, string telephone_number) : 
-		Customer(name, address, age, telephone_number) {}
+	Customer_Student(string name, string address, int age, string telephone_number, int id) : 
+		Customer(name, address, age, telephone_number, id) {
+		this->set_customer_number(id);
+	}
 
 	const double SAVINGS_INTEREST = 0.014;
 	const double CHECK_INTEREST = 0.0002;

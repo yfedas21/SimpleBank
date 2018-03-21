@@ -69,13 +69,13 @@ void Add_Account(Bank &bank)
 			cust_type_str = "senior";
 		else
 			cust_type_str = "student";
-		acct = bank.add_account(name, address, telephone, age, cust_type_str, acct_type_str);
+		acct = bank.add_account(name, address, telephone, age, cust_type_str, acct_type_str, bank.get_cust_id());
 	}
 	if (acct) {
 		cout << "Your new account ID is " << acct->get_account() << endl;
 	}
 	else {
-		cout << "Sorry.  We failed to create an account for you\n";
+		cout << "Sorry.  We failed to create an account for you.\n";
 	}
 }
 
