@@ -143,6 +143,7 @@
     <ClInclude Include="Bank.h" />
     <ClInclude Include="Customer.h" />
     <ClInclude Include="Customer_Adult.h" />
+    <ClInclude Include="Customer_Factory.h" />
     <ClInclude Include="Customer_Senior.h" />
     <ClInclude Include="Customer_Student.h" />
     <ClInclude Include="readint.h" />

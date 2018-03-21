@@ -13,35 +13,30 @@ using std::string;
 
 @author: Ed Walker
 */
-class Customer 
-{
+class Customer {
 private:
+	int customer_number;
+
+protected:
 	string name;
 	string address;
 	int age;
 	string telephone_number;
-	int customer_number;
-
-	
 
 public:
-	Customer() {
 
+	Customer(string name, string address, int age, string telephone_number) {
+		this->name = name;
+		this->address = address;
+		this->age = age;
+		this->telephone_number = telephone_number;
 	}
 
-	// Factory class
-	static Customer* factory(string customer_type) {
-		// ******* Added Tuesday, March 20, 2018
-		/*		if (customer_type == "SENIOR")
-					return new Customer::Senior*;
-				else if (customer_type == "student")
-					return new Student*;
-				else if (customer_type == "adult")
-					return new Adult*;
-				else throw std::invalid_argument(
-					customer_type + " is invalid!");*/
-		// ******* <end>
-	}
+	// Create a pure virtual function to 
+	// make Customer an abstract class
+	// i.e., no objects can be created of 
+	// the Customer type
+	virtual string get_customer_type() = 0;
 
 	// Mutator functions
 	void set_name(string name) {
@@ -71,8 +66,6 @@ public:
 	string get_telephone_number() { return telephone_number; }
 	int get_customer_number() { return customer_number; }
 
-	// Each type of Customer has its own checking and savings interest rates,
-	// as well as its own checking and overdraft fees.
 };
 
 
