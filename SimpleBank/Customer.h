@@ -37,6 +37,10 @@ public:
 	// i.e., no objects can be created of 
 	// the Customer type
 	virtual string get_customer_type() = 0;
+	virtual const double get_savings_interest() = 0;
+	virtual const double get_check_interest() = 0;
+	virtual const double get_check_charge() = 0;
+	virtual const double get_overdraft_penalty() = 0;
 
 	// Mutator functions
 	void set_name(string name) {

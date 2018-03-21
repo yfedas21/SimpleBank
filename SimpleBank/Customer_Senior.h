@@ -17,6 +17,22 @@ public:
 	
 	friend class Customer_Factory;
 
+	const double get_savings_interest() {
+		return this->SAVINGS_INTEREST;
+	}
+
+	const double get_check_interest() {
+		return this->CHECK_INTEREST;
+	}
+
+	const double get_check_charge() {
+		return this->CHECK_CHARGE;
+	}
+
+	const double get_overdraft_penalty() {
+		return this->OVERDRAFT_PENALTY;
+	}
+
 	string get_customer_type() {
 		return string("senior");
 	}
