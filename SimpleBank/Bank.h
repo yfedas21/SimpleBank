@@ -14,6 +14,10 @@ The CS273 Bank has Accounts and Customers
 class Bank
 {
 private:
+
+	// Implement a counter for accounts (auto generate IDs)
+	int acct_counter = 1000;
+
 	std::vector<Account *> accounts; // Bank HAS accounts
 	std::vector<Customer *> customers;  // Bank HAS customers
 
@@ -70,6 +74,8 @@ private:
 	Account * add_account(Customer *cust, std::string account_type)
 	{
 		Account *acct = NULL;
+
+		// Implement the counter in here somewhere ***************** acct_counter+=7 after the account is added
 
 		// FIXME: Factory method for creating a Account object (could be a Saving_Account or a Checking_Account).
 

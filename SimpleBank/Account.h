@@ -17,10 +17,12 @@ using std::string;
 */
 
 class Account {
+private: 
+	int account_counter = 1000;
 protected:
 	Customer *customer;		// The customer who owns this account
 	double balance;			// The available balance in this account
-	int account_number;		// A unique number identifying this account
+	int *account_number = &account_counter;		// A unique number identifying this account
 	std::vector<Transaction *> transactions;  // The record of transactions that have occured with this account
 
 	/**
@@ -61,7 +63,10 @@ public:
 	Constructor requires a customer to create an account
 	Balance always starts with 0 when account is created.
 	*/
-	Account(Customer *cust, int id) : customer(cust), account_number(id), balance(0) {}
+
+	// I want to create an auto-generating id 
+	// Account(Customer *cust, int id) : customer(cust), account_number(id), balance(0) {}
+	Account(Customer *cust) : customer(cust), balance(0) {}
 
 	/**
 	Generic accesser and setter methods for properties customer, balance, and account_number
