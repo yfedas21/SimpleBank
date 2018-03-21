@@ -145,7 +145,7 @@ public:
 		// See above comment
 		Account *acct = get_account(acct_number);
 		if (acct) {
-			// FIXME: Withdraw the amt from the account
+			acct->set_balance(acct->get_balance() + amt);
 		}
 	}
 
