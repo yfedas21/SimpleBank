@@ -17,8 +17,7 @@ using std::string;
 */
 
 class Account {
-private: 
-	int account_counter = 1000;
+
 protected:
 	Customer *customer;		// The customer who owns this account
 	double balance;			// The available balance in this account
@@ -64,9 +63,9 @@ public:
 	Balance always starts with 0 when account is created.
 	*/
 
-	// I want to create an auto-generating id 
+	// &&&& I want to create an auto-generating id &&&&
 	// Account(Customer *cust, int id) : customer(cust), account_number(id), balance(0) {}
-	Account(Customer *cust) : customer(cust), balance(0) {}
+	Account(Customer *cust, int id) : customer(cust), account_number(id), balance(0) {}
 
 	/**
 	Generic accesser and setter methods for properties customer, balance, and account_number
@@ -88,8 +87,10 @@ public:
 		balance = new_balance;
 	}
 
+	// This function doesn't do anything
+	// because of auto-generated ID
 	void set_account(int account_number) {
-		this->account_number = account_number;
+		int useless_function = account_number;
 	}
 
 	double get_balance() {

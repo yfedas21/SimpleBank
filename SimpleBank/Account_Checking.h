@@ -5,8 +5,10 @@
 
 class Account_Checking : public Account {
 private:
-	Account_Checking(Customer* cust) :
-		Account(cust) {};
+	Account_Checking(Customer* cust, int id) :
+		Account(cust, id) {
+		this->account_number = id;
+	};
 
 public:
 
@@ -14,6 +16,10 @@ public:
 
 	string get_account_type() {
 		return string("checking");
+	}
+
+	void add_interest() {
+
 	}
 };
 

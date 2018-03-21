@@ -5,8 +5,10 @@
 
 class Account_Savings : public Account {
 private:
-	Account_Savings(Customer* cust) :
-		Account(cust) {};
+	Account_Savings(Customer* cust, int id) :
+		Account(cust, id) {
+		this->account_number = id;
+	};
 
 public:
 
@@ -14,6 +16,10 @@ public:
 
 	string get_account_type() {
 		return string("savings");
+	}
+
+	void add_interest() {
+
 	}
 };
 

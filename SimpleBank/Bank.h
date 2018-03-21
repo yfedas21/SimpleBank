@@ -3,6 +3,7 @@
 #include <vector>
 #include <stdexcept>
 #include "Account.h"
+#include "Account_Factory.h"
 #include "Customer.h"
 #include "Customer_Factory.h"
 
@@ -15,15 +16,12 @@ class Bank
 {
 private:
 
-	// Implement a counter for accounts (auto generate IDs)
-	int acct_counter = 1000;
+	// Auto-generate an ID for accounts and customers
+	int acct_id;
+	int cust_id;
 
 	std::vector<Account *> accounts; // Bank HAS accounts
 	std::vector<Customer *> customers;  // Bank HAS customers
-
-	// Counters for generating unique account and customer IDs
-	int account_id;
-	int customer_id;
 
 
 	/**
@@ -73,9 +71,7 @@ private:
 	*/
 	Account * add_account(Customer *cust, std::string account_type)
 	{
-		Account *acct = NULL;
-
-		// Implement the counter in here somewhere ***************** acct_counter+=7 after the account is added
+		Account *acct = Account_Factory::factory(cust, account_type, acct_id);
 
 		// FIXME: Factory method for creating a Account object (could be a Saving_Account or a Checking_Account).
 
@@ -86,7 +82,7 @@ private:
 public:
 	/** Constructor
 	*/
-	Bank() : account_id(1000), customer_id(1000) {}
+	Bank() : acct_id(1000), cust_id(1000) {}
 
 	/**
 	Add account for an existing user
@@ -100,6 +96,9 @@ public:
 		if (cust == NULL)
 			return NULL;
 		return add_account(cust, account_type);
+
+		// Increment acct_id an arbitrary amount
+		acct_id += 7;
 	}
 
 	/**
@@ -117,8 +116,14 @@ public:
 	{
 		Customer *cust = Customer_Factory::factory(cust_type, name, address, age, telephone);
 
+		// Increment cust_id an arbitrary amount
+		cust_id += 7;
+
 		customers.push_back(cust);
 		return add_account(cust, account_type);
+
+		// Increment acct_id an arbitrary amount
+		acct_id += 7;
 	}
 
 	/**
@@ -128,6 +133,9 @@ public:
 	*/
 	void make_deposit(int acct_number, double amt)
 	{
+		// Don't increment acct_id here, the variable
+		// acct is a local variable that gets destroyed
+		// once the function is out of scope
 		Account *acct = get_account(acct_number);
 		if (acct) {
 			// FIXME: Deposit the amt in the accountamt
@@ -141,6 +149,7 @@ public:
 	*/
 	void make_withdrawal(int acct_number, double amt)
 	{
+		// See above comment
 		Account *acct = get_account(acct_number);
 		if (acct) {
 			// FIXME: Withdraw the amt from the account
