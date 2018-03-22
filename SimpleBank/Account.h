@@ -31,10 +31,11 @@ protected:
 	*/
 	std::string get_fees()
 	{
-		int overdraft, charge;
+		double overdraft, charge;
 
 		// Polymorphism: calls the correct virtual methods from the specific customer type
-		// FIXME: Get the overdraft and check charge information from this accounts customer
+		overdraft = customer->get_overdraft_penalty();
+		charge = customer->get_check_charge();
 
 		std::stringstream ss;
 		ss << "Check Charge: " << charge << " Overdraft Fee: " << overdraft;
@@ -49,10 +50,9 @@ protected:
 	void add_interest(double interest) {
 		double amt = balance*interest;
 		balance = balance + amt;
-		std::string fees = get_fees();
-		Transaction *tran = NULL;
 
-		// FIXME: Create a Transaction object and assign it to the transaction vector.
+		Transaction *tran = new Transaction(customer->get_customer_number(), 
+			string("add_interest"), balance, this->get_fees());
 
 		transactions.push_back(tran);
 	}
@@ -105,10 +105,12 @@ public:
 	virtual std::string to_string() {
 		std::stringstream ss; // for composing the string that describes this account
 
-							  // FIXME: Add information about the customer who owns this account.
+		ss << "  Customer number: " << customer->get_customer_number() << std::endl;
+		ss << "  Customer name: " << customer->get_name() << std::endl;
 
-		ss << "  Balance: " << balance << std::endl;
 		ss << "  Account ID: " << account_number << std::endl;
+		ss << "  Balance: " << balance << std::endl;
+		ss << "  Number of Transactions: " << transactions.size() << std::endl;
 		return ss.str();
 	}
 
@@ -118,10 +120,9 @@ public:
 	*/
 	virtual void deposit(double amt) {
 		balance += amt;
-		std::string fees = get_fees();
-		Transaction *tran = NULL;
 
-		// FIXME: Create a Transaction object and assign it to transaction vector.
+		Transaction *tran = new Transaction(customer->get_customer_number(),
+			string("deposit"), balance, this->get_fees());
 
 		transactions.push_back(tran);
 	}
@@ -132,10 +133,9 @@ public:
 	*/
 	virtual void withdraw(double amt) {
 		balance -= amt;
-		std::string fees = get_fees();
-		Transaction *tran = NULL;
 
-		// FIXME: Create a Transaction object and assign it to tran.
+		Transaction *tran = new Transaction(customer->get_customer_number(),
+			string("withdraw"), balance, this->get_fees());
 
 		transactions.push_back(tran);
 	}

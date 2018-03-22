@@ -4,16 +4,11 @@
 #include <sstream>
 
 /**
-Keeps a record for each transaction performed
 
-
-
-// REMOVE LATER: This class is already completely implemented
-
-
-
+	Keeps a record for each transaction performed
 
 */
+
 class Transaction
 {
 private:
