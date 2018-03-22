@@ -92,11 +92,7 @@ public:
 		if (cust == NULL)
 			return NULL;
 
-		Account* acct = add_account(cust, account_type);
-		accounts.push_back(acct);
-		increment(acct_id);
-
-		return acct;
+		return add_account(cust, account_type);
 	}
 
 	/**
