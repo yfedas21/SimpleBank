@@ -107,7 +107,6 @@ public:
 
 		ss << "  Customer number: " << customer->get_customer_number() << std::endl;
 		ss << "  Customer name: " << customer->get_name() << std::endl;
-
 		ss << "  Account ID: " << account_number << std::endl;
 		ss << "  Balance: " << balance << std::endl;
 		ss << "  Number of Transactions: " << transactions.size() << std::endl;
