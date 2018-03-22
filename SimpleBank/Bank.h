@@ -131,7 +131,7 @@ public:
 		// once the function is out of scope
 		Account *acct = get_account(acct_number);
 		if (acct) {
-			// FIXME: Deposit the amt in the accountamt
+			acct->set_balance(acct->get_balance() + amt);
 		}
 	}
 
@@ -145,7 +145,7 @@ public:
 		// See above comment
 		Account *acct = get_account(acct_number);
 		if (acct) {
-			acct->set_balance(acct->get_balance() + amt);
+			acct->set_balance(acct->get_balance() - amt);
 		}
 	}
 
