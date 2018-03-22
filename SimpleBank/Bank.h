@@ -55,7 +55,7 @@ private:
 				return cust;
 			}
 		}
-
+		
 		return NULL;
 	}
 
@@ -68,6 +68,7 @@ private:
 	Account * add_account(Customer *cust, std::string account_type)
 	{
 		Account *acct = Account_Factory::factory(cust, account_type, acct_id);
+		accounts.push_back(acct);
 		increment(acct_id);
 
 		return acct;
@@ -91,9 +92,11 @@ public:
 		if (cust == NULL)
 			return NULL;
 
+		Account* acct = add_account(cust, account_type);
+		accounts.push_back(acct);
 		increment(acct_id);
 
-		return add_account(cust, account_type);
+		return acct;
 	}
 
 	/**
@@ -110,13 +113,15 @@ public:
 		std::string cust_type, std::string account_type, int id)
 	{
 		Customer *cust = Customer_Factory::factory(cust_type, name, address, age, telephone, id);
-
+		customers.push_back(cust);
 		increment(cust_id);
+
+		Account* acct = add_account(cust, account_type);
+		accounts.push_back(acct);
 		increment(acct_id);
 
-		customers.push_back(cust);
 
-		return add_account(cust, account_type);
+		return acct;
 	}
 
 	/**
