@@ -95,12 +95,12 @@ public:
 	}
 
 	/**
-	Generic method describing the account information.
+		Generic method describing the account information.
 
-	Remember that you will need to indicate if an account is Savings or Checking in
-	an overridden version of to_string() in the derived classes.
+		Remember that you will need to indicate if an account is Savings or Checking in
+		an overridden version of to_string() in the derived classes.
 
-	@return string describing generic information about the account
+		@return string describing generic information about the account
 	*/
 	virtual std::string to_string() {
 		std::stringstream ss; // for composing the string that describes this account
