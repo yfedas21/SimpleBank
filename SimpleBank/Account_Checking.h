@@ -26,8 +26,8 @@ public:
 	std::string to_string() {
 		std::stringstream ss; // for composing the string that describes this account
 
-		ss << "  Customer number: " << this->get_customer->get_customer_number() << std::endl;
-		ss << "  Customer name: " << this->get_customer->get_name() << std::endl;
+		ss << "  Customer number: " << this->get_customer()->get_customer_number() << std::endl;
+		ss << "  Customer name: " << this->get_customer()->get_name() << std::endl;
 		ss << "  Account Type: " << this->get_account_type() << std::endl;
 		ss << "  Account ID: " << account_number << std::endl;
 		ss << "  Balance: " << this->get_balance() << std::endl;
