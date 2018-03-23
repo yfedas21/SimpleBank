@@ -185,6 +185,6 @@ int main()
 		cin >> choice;
 	} while (choice != 'n');
 
-	cout << "Goodbye!  Thank you for visiting.\n";
+	cout << "\nGoodbye!  Thank you for visiting.\n";
 	system("PAUSE");
 }
