@@ -3,12 +3,12 @@
 #include <string>
 
 /**
-Function for reading a value within the range [low, high]
+	Function for reading a value within the range [low, high]
 
-@param prompt	String to display at the command prompt
-@param low		Lower bound of range
-@param high		Upper bound of range
-@return			User entered value within range
+	@param prompt	String to display at the command prompt
+	@param low		Lower bound of range
+	@param high		Upper bound of range
+	@return			User entered value within range
 */
 int read_int(const std::string &prompt, int low, int high)
 {

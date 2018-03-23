@@ -13,11 +13,11 @@
 using namespace std;
 
 /**
-This is where we add a new account in the bank
-If it is a new customer, we also need to get additional information
-to add a new customer record in the bank.
+	This is where we add a new account in the bank
+	If it is a new customer, we also need to get additional information
+	to add a new customer record in the bank.
 
-@param bank	Bank object to which we will be adding accounts
+	@param bank	Bank object to which we will be adding accounts
 */
 void Add_Account(Bank &bank)
 {
@@ -80,9 +80,9 @@ void Add_Account(Bank &bank)
 }
 
 /**
-The is where we list all the accounts owned by a customer (if he/she exists)
+	The is where we list all the accounts owned by a customer (if he/she exists)
 
-@param bank Bank object in which accounts are located
+	@param bank Bank object in which accounts are located
 */
 void List_Account(Bank &bank)
 {
@@ -103,9 +103,9 @@ void List_Account(Bank &bank)
 }
 
 /**
-This is where we make a deposit in an account, identified by its account ID
+	This is where we make a deposit in an account, identified by its account ID
 
-@param bank Bank object in which account is located
+	@param bank Bank object in which account is located
 */
 void Make_Deposit(Bank &bank)
 {
@@ -119,9 +119,9 @@ void Make_Deposit(Bank &bank)
 }
 
 /**
-This is where we make a withdrawal in an account, identified by its ID
+	This is where we make a withdrawal in an account, identified by its ID
 
-@param bank Bank object in which account is located
+	@param bank Bank object in which account is located
 */
 void Make_Withdrawal(Bank &bank)
 {
@@ -186,4 +186,5 @@ int main()
 	} while (choice != 'n');
 
 	cout << "Goodbye!  Thank you for visiting.\n";
+	system("PAUSE");
 }

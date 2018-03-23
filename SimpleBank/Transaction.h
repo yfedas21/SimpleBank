@@ -4,9 +4,7 @@
 #include <sstream>
 
 /**
-
 	Keeps a record for each transaction performed
-
 */
 
 class Transaction

@@ -114,8 +114,8 @@ public:
 	}
 
 	/**
-	Deposits amount into account
-	@param amt The deposit amount
+		Deposits amount into account
+		@param amt The deposit amount
 	*/
 	virtual void deposit(double amt) {
 		balance += amt;
@@ -127,8 +127,8 @@ public:
 	}
 
 	/**
-	Withdraws amount from account
-	@param amt The withdrawal amount
+		Withdraws amount from account
+		@param amt The withdrawal amount
 	*/
 	virtual void withdraw(double amt) {
 		balance -= amt;

@@ -60,10 +60,10 @@ private:
 	}
 
 	/**
-	Add a new account to a customer object (irrespective of its specific type: adult, senior, or student)
-	@param cust The customer object
-	@param account_type The account type, i.e. "savings" or "checking"
-	@return the newly created account object
+		Add a new account to a customer object (irrespective of its specific type: adult, senior, or student)
+		@param cust The customer object
+		@param account_type The account type, i.e. "savings" or "checking"
+		@return the newly created account object
 	*/
 	Account * add_account(Customer *cust, std::string account_type)
 	{
@@ -81,10 +81,10 @@ public:
 	Bank() : acct_id(1000), cust_id(1000) {}
 
 	/**
-	Add account for an existing user
-	@param name The customer name
-	@param account_type The account type, i.e. "checking" or "savings"
-	@return the newly created account object if the customer exist, or NULL otherwise
+		Add account for an existing user
+		@param name The customer name
+		@param account_type The account type, i.e. "checking" or "savings"
+		@return the newly created account object if the customer exist, or NULL otherwise
 	*/
 	Account* add_account(std::string name, std::string account_type)
 	{
@@ -96,14 +96,14 @@ public:
 	}
 
 	/**
-	Add account for new user.  This creates a new customer and adds an account to him/her.
-	@param name Customer name
-	@param address Customer address
-	@param telephone Customer telephone number
-	@param age Customer age
-	@param cust_type Customer type, i.e. "adult", "senior" or "student"
-	@param account_type Account type, i.e. "checking" or "savings"
-	@return the newly created account object
+		Add account for new user.  This creates a new customer and adds an account to him/her.
+		@param name Customer name
+		@param address Customer address
+		@param telephone Customer telephone number
+		@param age Customer age
+		@param cust_type Customer type, i.e. "adult", "senior" or "student"
+		@param account_type Account type, i.e. "checking" or "savings"
+		@return the newly created account object
 	*/
 	Account* add_account(std::string name, std::string address, std::string telephone, int age,
 		std::string cust_type, std::string account_type, int id)
@@ -116,15 +116,12 @@ public:
 	}
 
 	/**
-	Make a deposit in an account identified by the account id
-	@param acct_number	The account id
-	@param amt			The amount to deposit
+		Make a deposit in an account identified by the account id
+		@param acct_number	The account id
+		@param amt			The amount to deposit
 	*/
 	void make_deposit(int acct_number, double amt)
 	{
-		// Don't increment acct_id here, the variable
-		// acct is a local variable that gets destroyed
-		// once the function is out of scope
 		Account *acct = get_account(acct_number);
 		if (acct) {
 			acct->set_balance(acct->get_balance() + amt);
@@ -132,13 +129,12 @@ public:
 	}
 
 	/**
-	Make a withdrawal in an account identified by the account id
-	@param acct_number	The account id
-	@param amt			The amount to withdraw
+		Make a withdrawal in an account identified by the account id
+		@param acct_number	The account id
+		@param amt			The amount to withdraw
 	*/
 	void make_withdrawal(int acct_number, double amt)
 	{
-		// See above comment
 		Account *acct = get_account(acct_number);
 		if (acct) {
 			acct->set_balance(acct->get_balance() - amt);
@@ -146,9 +142,9 @@ public:
 	}
 
 	/**
-	Get the list of account numbers associated with a user, identified by his/her name
-	@param name The customer name
-	@return vector of account ids
+		Get the list of account numbers associated with a user, identified by his/her name
+		@param name The customer name
+		@return vector of account ids
 	*/
 	std::vector<int> get_account(std::string name)
 	{
@@ -156,9 +152,9 @@ public:
 	}
 
 	/**
-	Get the account object for an account identified by an account id
-	@param acct_name The account id
-	@return the account object if it exists, NULL otherwise
+		Get the account object for an account identified by an account id
+		@param acct_name The account id
+		@return the account object if it exists, NULL otherwise
 	*/
 	Account *get_account(int acct_number)
 	{
