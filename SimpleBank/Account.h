@@ -84,12 +84,6 @@ public:
 		balance = new_balance;
 	}
 
-	// This function doesn't do anything
-	// because of auto-generated ID
-	void set_account(int account_number) {
-		int useless_function = account_number;
-	}
-
 	double get_balance() {
 		return balance;
 	}
