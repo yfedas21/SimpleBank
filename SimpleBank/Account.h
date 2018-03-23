@@ -101,43 +101,27 @@ public:
 		an overridden version of to_string() in the derived classes.
 
 		@return string describing generic information about the account
-	*/
-	virtual std::string to_string() {
-		std::stringstream ss; // for composing the string that describes this account
 
-		ss << "  Customer number: " << customer->get_customer_number() << std::endl;
-		ss << "  Customer name: " << customer->get_name() << std::endl;
-		ss << "  Account ID: " << account_number << std::endl;
-		ss << "  Balance: " << balance << std::endl;
-		ss << "  Number of Transactions: " << transactions.size() << std::endl;
-		return ss.str();
-	}
+		Implemented as a pure virtual function
+	*/
+	virtual std::string to_string() = 0;
 
 	/**
 		Deposits amount into account
 		@param amt The deposit amount
+		
+		Implemented deposit to be pure virtual
 	*/
-	virtual void deposit(double amt) {
-		balance += amt;
+	virtual void deposit(double amt) = 0;
 
-		Transaction *tran = new Transaction(customer->get_customer_number(),
-			string("deposit"), balance, this->get_fees());
-
-		transactions.push_back(tran);
-	}
 
 	/**
 		Withdraws amount from account
 		@param amt The withdrawal amount
+
+		Implemented withdraw to be pure virtual
 	*/
-	virtual void withdraw(double amt) {
-		balance -= amt;
-
-		Transaction *tran = new Transaction(customer->get_customer_number(),
-			string("withdraw"), balance, this->get_fees());
-
-		transactions.push_back(tran);
-	}
+	virtual void withdraw(double amt) = 0;
 
 	// We want the Savings_Account and Checking_Account to implement this.
 	virtual void add_interest() = 0;

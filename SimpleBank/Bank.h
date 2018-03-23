@@ -124,7 +124,7 @@ public:
 	{
 		Account *acct = get_account(acct_number);
 		if (acct) {
-			acct->set_balance(acct->get_balance() + amt);
+			acct->deposit(amt);
 		}
 	}
 
@@ -137,7 +137,7 @@ public:
 	{
 		Account *acct = get_account(acct_number);
 		if (acct) {
-			acct->set_balance(acct->get_balance() - amt);
+			acct->withdraw(amt);
 		}
 	}
 

@@ -45,7 +45,7 @@ public:
 		Transaction *tran = new Transaction(this->get_customer()->get_customer_number(),
 			string("deposit"), this->get_balance(), this->get_fees());
 
-		transactions.push_back(tran);
+		this->transactions.push_back(tran);
 	}
 
 	/**
@@ -58,7 +58,7 @@ public:
 		Transaction *tran = new Transaction(customer->get_customer_number(),
 			string("withdraw"), balance, this->get_fees());
 
-		transactions.push_back(tran);
+		this->transactions.push_back(tran);
 	}
 };
 
