@@ -44,8 +44,8 @@ protected:
 
 protected:
 	/**
-	Add interest based on a specified interest rate to account
-	@param interest	The interest rate
+		Add interest based on a specified interest rate to account
+		@param interest	The interest rate
 	*/
 	void add_interest(double interest) {
 		double amt = balance*interest;

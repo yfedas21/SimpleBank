@@ -19,7 +19,7 @@ public:
 	}
 
 	void add_interest() {
-
+		Account::add_interest(this->get_customer()->get_check_interest());
 	}
 
 	// Inherited from the Account base class

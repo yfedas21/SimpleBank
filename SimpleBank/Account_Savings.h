@@ -19,7 +19,7 @@ public:
 	}
 
 	void add_interest() {
-
+		Account::add_interest(this->get_customer()->get_savings_interest());
 	}
 
 	// Inherited from the Account base class
