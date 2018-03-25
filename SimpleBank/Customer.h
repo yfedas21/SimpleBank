@@ -70,6 +70,7 @@ public:
 	int get_age() { return age; }
 	string get_telephone_number() { return telephone_number; }
 	int get_customer_number() { return customer_number; }
+	int get_some_penalty() { return customer_number; }
 
 };
 
